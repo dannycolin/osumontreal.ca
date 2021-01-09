@@ -1,0 +1,8 @@
+{{ $scss := resources.Get "osum/scss/app.scss" }}
+{{ if eq hugo.Environment "production" }}
+  {{ $style := $scss | resources.ToCSS | resources.Minify }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{ else }}
+  {{ $style := $scss | resources.ToCSS }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{ end }}
