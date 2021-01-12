@@ -8,10 +8,13 @@
     {{ partial "styles.html" . }}
   </head>
   <body>
+    {{ partial "navigation.html" . }}
+
     {{ block "main" . }}
 
     {{ end }}
 
     <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/osum-navbar.js"></script>
   </body>
 </html>
